@@ -8,6 +8,7 @@ namespace Location.Command.Api.Controllers;
 [ApiVersion("1.0")]
 [ApiController]
 [Route("[controller]")]
+
 public sealed class DeliverymanController(IDeliverymanServices _services, ILogger<MotorcycleController> _logger) : ControllerBase
 {
     [HttpPost("RegisterDeliveryman")]
