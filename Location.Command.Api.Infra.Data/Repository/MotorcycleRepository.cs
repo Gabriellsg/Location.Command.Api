@@ -5,7 +5,6 @@ using Location.Command.Api.Domain.Motorcycle.Interfaces;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using System.Data;
-using System.Reflection.Metadata;
 
 namespace Location.Command.Api.Infra.Data.Repository;
 
@@ -46,7 +45,12 @@ public sealed class MotorcycleRepository : IMotorcycleRepository
         try
         {         
             var result = await _connection.QueryAsync<MotorcycleDomain>($@"
-                     SELECT ID, YEAR, MODEL, PLATE FROM MOTORCYCLE", 
+                     SELECT 
+                        ID as {nameof(MotorcycleDomain.Id)}, 
+                        YEAR as {nameof(MotorcycleDomain.Year)}, 
+                        MODEL as {nameof(MotorcycleDomain.Model)}, 
+                        PLATE as {nameof(MotorcycleDomain.Plate)} 
+                     FROM MOTORCYCLE", 
                      null, 
                      commandType: CommandType.Text);
 
@@ -64,7 +68,12 @@ public sealed class MotorcycleRepository : IMotorcycleRepository
         try
         {
             var result = await _connection.QueryFirstOrDefaultAsync<MotorcycleDomain>($@"
-                    SELECT ID, YEAR, MODEL, PLATE FROM MOTORCYCLE
+                    SELECT  
+                        ID as {nameof(MotorcycleDomain.Id)}, 
+                        YEAR as {nameof(MotorcycleDomain.Year)}, 
+                        MODEL as {nameof(MotorcycleDomain.Model)}, 
+                        PLATE as {nameof(MotorcycleDomain.Plate)}  
+                    FROM MOTORCYCLE
                     WHERE PLATE = @plate",
                     new
                     {
@@ -85,7 +94,12 @@ public sealed class MotorcycleRepository : IMotorcycleRepository
         try
         {
             var result = await _connection.QueryFirstOrDefaultAsync<MotorcycleDomain>($@"
-                    SELECT ID, YEAR, MODEL, PLATE FROM MOTORCYCLE
+                    SELECT  
+                        ID as {nameof(MotorcycleDomain.Id)}, 
+                        YEAR as {nameof(MotorcycleDomain.Year)}, 
+                        MODEL as {nameof(MotorcycleDomain.Model)}, 
+                        PLATE as {nameof(MotorcycleDomain.Plate)} 
+                    FROM MOTORCYCLE
                     WHERE ID = @Id",
                     new
                     {

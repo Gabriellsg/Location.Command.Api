@@ -2,10 +2,6 @@ using Location.Command.Api.Infra.CrossCutting.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-//builder.Services.Configure<RabbitConfigOptions>(
-//    builder.Configuration.GetSection(RabbitConfigOptions.Position));
 // Add services to the container.
 
 builder.Services

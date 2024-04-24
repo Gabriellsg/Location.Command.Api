@@ -1,5 +1,7 @@
 ﻿using Location.Command.Api.Domain.Deliveryman.Interfaces;
 using Location.Command.Api.Domain.Deliveryman.Services;
+using Location.Command.Api.Domain.Locations.Interfaces;
+using Location.Command.Api.Domain.Locations.Services;
 using Location.Command.Api.Domain.Motorcycle.Interfaces;
 using Location.Command.Api.Domain.Motorcycle.Services;
 using Location.Command.Api.Domain.Plans.Interfaces;
@@ -16,13 +18,6 @@ public static class DomainModule
         services.AddScoped<IMotorcycleServices, MotorcycleServices>();
         services.AddScoped<IDeliverymanServices, DeliverymanServices>();
         services.AddScoped<ILocationsPlansServices, LocationsPlansServices>();
-
-        RegisterOption(services, configuration);
-    }
-
-    public static void RegisterOption(IServiceCollection services, IConfiguration configuration)
-    {
-        //services.Configure<RabbitConfigOptions>(configuration.GetSection(RabbitConfigOptions.Config));
+        services.AddScoped<ILocationServices, LocationServices>();
     }
 }
-

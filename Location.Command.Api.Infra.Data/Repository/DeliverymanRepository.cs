@@ -51,13 +51,15 @@ namespace Location.Command.Api.Infra.Data.Repository;
             try
             {
                 var result = await _connection.QueryFirstOrDefaultAsync<DeliverymanDomain>($@"
-                     SELECT NAME, 
-                            DOCUMENT, 
-                            BIRTH_DATE, 
-                            CNH_NUMBER, 
-                            CNH_TYPE, 
-                            IMAGE_PATH, 
-                            ACTIVE
+                     SELECT 
+                            ID as {nameof(DeliverymanDomain.Id)},
+                            NAME as {nameof(DeliverymanDomain.Name)}, 
+                            DOCUMENT as {nameof(DeliverymanDomain.Document)}, 
+                            BIRTH_DATE as {nameof(DeliverymanDomain.BirthDate)}, 
+                            CNH_NUMBER as {nameof(DeliverymanDomain.CnhNumber)}, 
+                            CNH_TYPE as {nameof(DeliverymanDomain.CnhType)}, 
+                            IMAGE_PATH as {nameof(DeliverymanDomain.ImagePath)}, 
+                            ACTIVE as {nameof(DeliverymanDomain.Active)}
                      FROM DELIVERYMAN
                      WHERE DOCUMENT = @document",
                         new
@@ -79,13 +81,15 @@ namespace Location.Command.Api.Infra.Data.Repository;
         try
         {
             var result = await _connection.QueryFirstOrDefaultAsync<DeliverymanDomain>($@"
-                     SELECT NAME, 
-                            DOCUMENT, 
-                            BIRTH_DATE, 
-                            CNH_NUMBER, 
-                            CNH_TYPE, 
-                            IMAGE_PATH, 
-                            ACTIVE
+                     SELECT 
+                            ID as {nameof(DeliverymanDomain.Id)},
+                            NAME as {nameof(DeliverymanDomain.Name)}, 
+                            DOCUMENT as {nameof(DeliverymanDomain.Document)}, 
+                            BIRTH_DATE as {nameof(DeliverymanDomain.BirthDate)}, 
+                            CNH_NUMBER as {nameof(DeliverymanDomain.CnhNumber)}, 
+                            CNH_TYPE as {nameof(DeliverymanDomain.CnhType)}, 
+                            IMAGE_PATH as {nameof(DeliverymanDomain.ImagePath)}, 
+                            ACTIVE as {nameof(DeliverymanDomain.Active)}
                      FROM DELIVERYMAN
                      WHERE ID = @DeliverymanId",
                     new

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Command.Api", "Location.Command.Api\Location.Command.Api.csproj", "{5941C510-978C-4381-81CC-0E54B9DFC06D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location.Command.Api", "Location.Command.Api\Location.Command.Api.csproj", "{5941C510-978C-4381-81CC-0E54B9DFC06D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Command.Api.Domain", "Location.Command.Api.Domain\Location.Command.Api.Domain.csproj", "{5CD18377-AA37-46C5-A8A8-E79316D4E5F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location.Command.Api.Domain", "Location.Command.Api.Domain\Location.Command.Api.Domain.csproj", "{5CD18377-AA37-46C5-A8A8-E79316D4E5F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Command.Api.Infra.CrossCutting.IoC", "Location.Command.Api.Infra.CrossCutting.IoC\Location.Command.Api.Infra.CrossCutting.IoC.csproj", "{18185E63-A25F-4E43-BD3F-B022C3130385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location.Command.Api.Infra.CrossCutting.IoC", "Location.Command.Api.Infra.CrossCutting.IoC\Location.Command.Api.Infra.CrossCutting.IoC.csproj", "{18185E63-A25F-4E43-BD3F-B022C3130385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Command.Api.Infra.Data", "Location.Command.Api.Infra.Data\Location.Command.Api.Infra.Data.csproj", "{4D9398C2-C8A2-4C98-BA45-23CC88B3FFEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Location.Command.Api.Infra.Data", "Location.Command.Api.Infra.Data\Location.Command.Api.Infra.Data.csproj", "{4D9398C2-C8A2-4C98-BA45-23CC88B3FFEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location.Command.Api.UnitTests", "Location.Command.Api.UnitTests\Location.Command.Api.UnitTests.csproj", "{787CD817-AB07-4B5B-B0D5-BB38BC95039B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4D9398C2-C8A2-4C98-BA45-23CC88B3FFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9398C2-C8A2-4C98-BA45-23CC88B3FFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9398C2-C8A2-4C98-BA45-23CC88B3FFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{787CD817-AB07-4B5B-B0D5-BB38BC95039B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787CD817-AB07-4B5B-B0D5-BB38BC95039B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787CD817-AB07-4B5B-B0D5-BB38BC95039B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787CD817-AB07-4B5B-B0D5-BB38BC95039B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

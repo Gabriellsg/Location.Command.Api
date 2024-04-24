@@ -5,5 +5,4 @@ public sealed record RegisterLocationRequestModel(
         int LocationPlansId, 
         int MotorcycleId, 
         DateTime LocationStart,
-        DateTime LocationEnd,
         DateTime LocationExpectedEnd);
