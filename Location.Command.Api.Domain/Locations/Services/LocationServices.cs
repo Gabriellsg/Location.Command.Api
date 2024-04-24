@@ -20,14 +20,17 @@ public sealed class LocationServices(
 {
     public async Task RegisterLocation(RegisterLocationRequestModel request)
     {
-        _ = await deliverymanRepository.GetDeliverymanById(request.DeliverymanId)
+        var deliveryman = await deliverymanRepository.GetDeliverymanById(request.DeliverymanId)
             ?? throw new DeliverymanNotFoundException(request.DeliverymanId);
 
-        _ = await motorcycleRepository.GetMotorcycleById(request.DeliverymanId)
-            ?? throw new DeliverymanNotFoundException(request.DeliverymanId);
+        _ = await motorcycleRepository.GetMotorcycleById(request.MotorcycleId)
+            ?? throw new MotorcycleNotFoundException(request.MotorcycleId);
 
-        _ = await locationsPlansRepository.GetLocationPlansById(request.DeliverymanId)
-            ?? throw new LocationPlansNotFoundException(request.DeliverymanId);
+        _ = await locationsPlansRepository.GetLocationPlansById(request.LocationPlansId)
+            ?? throw new LocationPlansNotFoundException(request.LocationPlansId);
+
+        if (deliveryman.CnhType != Enums.TypeCNH.A)
+         throw new LicenseTypeNotAllowedException(deliveryman.CnhType);
 
         await locationRepository.RegisterLocation(request);
     }
